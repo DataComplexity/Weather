@@ -69,9 +69,13 @@ export default function App() {
     "50n": " https://openweathermap.org/img/wn/50n@2x.png",
   };
 
+  const API_URL = import.meta.env.MODE === "development" ?
+    "http://localhost:5000"
+    : "https://weather-backend-vg95.onrender.com"
+
   const handleWeatherData = async (city) => {
     try {
-      const response = await fetch(`http://localhost:5000/weather?q=${city}`);
+      const response = await fetch(`${API_URL}/weather?q=${city}`);
       const data = await response.json();
       console.log(data);
 
