@@ -70,8 +70,8 @@ export default function App() {
   };
 
   const API_URL = import.meta.env.MODE === "development" ?
-    "http://localhost:5000"
-    : "https://weather-backend-vg95.onrender.com"
+    "http://localhost:5000" : ""   //empty
+    // : "https://weather-backend-vg95.onrender.com"
 
   const handleWeatherData = async (city) => {
     try {
